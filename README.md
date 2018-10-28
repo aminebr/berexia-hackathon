@@ -22,4 +22,4 @@ Used technologies:
 
 ![screenshot](./img2.png)
 
-![screenshot](./im3.png)
+![screenshot](./img3.png)

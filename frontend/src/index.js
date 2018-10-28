@@ -10,11 +10,13 @@ import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 
 require("storm-react-diagrams/dist/style.min.css");
 
+
 var engine = new SRD.DiagramEngine();
 engine.installDefaultFactories();
 
 // 2) setup the diagram model
 var model = new SRD.DiagramModel();
+console.log({model})
 
 // 3) create a default node
 //var node1 = new SRD.DefaultNodeModel("Node 1", "rgb(0,192,255)");
@@ -66,7 +68,7 @@ openGroupBy:false };
     const newNode = new SRD.DefaultNodeModel(file.name, "blue");
     newNode.addOutPort("out");
     model.addNode(newNode);
-
+    //a = newNode ;
     this.forceUpdate();
 
     
@@ -99,7 +101,9 @@ openGroupBy:false };
    })
   }
 
-
+  run=()=>{
+   Object.key(model.getNodes())
+    }
 
     
 
@@ -108,7 +112,7 @@ openGroupBy:false };
     newNode1.addOutPort("out");
     newNode1.addInPort("in");
     model.addNode(newNode1);
-    console.log(newNode1)
+    console.log(newNode1);
     this.forceUpdate(); 
 
 
@@ -217,7 +221,7 @@ openGroupBy:false };
     this.setState({ opencombine: true });
   };
 
-
+   
 
   onCloseCombine=()=>{
 
@@ -296,6 +300,7 @@ openGroupBy:false };
 
  <Modal open={openSelect} onClose={this.onCloseSelectModal} center>           
 <div id="betbet">
+<h3>SELECT COLUMNS</h3>
   <CheckboxGroup
     checkboxDepth={2} // This is needed to optimize the checkbox group
     name="fruits"
@@ -308,15 +313,18 @@ openGroupBy:false };
 
 
   <div>
+  <h3>WHERE CLAUSE</h3>
     {
  arrayop.map((item)=>(
      <button class="button" onClick={() => this.addSQL({item})} value={item}>{item}</button>
   ))
 } </div>
 <div>
+
   <input type='text' value={this.state.inputSQl} onChange={this.handleChangeSQL.bind(this)}
   onKeyPress={this._handleKeyPress} />
   </div>
+  <br></br><br></br>
       <div id="betbet1">
   {sentenceSQL}
      </div>
@@ -330,6 +338,7 @@ openGroupBy:false };
   <Modal  open={openGroupBy} onClose={this.onCloseGroupBy} center>
 
       <div id="betbet2">
+      <h3>GROUP BY COLUMNS</h3>
   <CheckboxGroup
     checkboxDepth={2} // This is needed to optimize the checkbox group
     name="fruits"
@@ -344,12 +353,15 @@ openGroupBy:false };
   </CheckboxGroup>
   </div>
 <div>
+<h3>FUNCTIONS</h3>
+
 {
   groupByopArray.map((item)=>(
      <button  class="button" onClick={() => this.addSQL({item})} value={item}>{item}</button>
   ))
 }
   </div>
+  <br></br><br></br>
   <div id="betbet3">{this.state.firstSQL+this.state.sqlString}</div>
 </Modal> 
 
@@ -369,22 +381,23 @@ onChange={this.columnNamesChanged}
 {
 this.getColumns().map(function(item, i){
 
-return <label><Checkbox value={item}/> {item}</label>})}
+return <label class="checkmark"><Checkbox  style="display:inline;" value={item}/> {item}</label>})}
 </CheckboxGroup>
 </div>
 
 <div>{this.state.firstSQL+this.state.sqlString}</div>
    </Modal> 
-    
+    <div id ="betbet4">
         <button class="button" id="configureSelect" hidden="hidden" onClick={this.onOpenSelectModal} >Configure Select</button>
         <button class="button" id="configureGroupBy" hidden="hidden" onClick={this.onOpenGroupByModal}> Configure GroupBy</button>
         <button class="button" id="configureCombine" hidden="hidden" onClick={this.onOpenCombineModal}> Configure Combine</button>
 
-        <input type="file" label="upload" onChange={this.fileInput} />
+        <input type="file"  id="betbet5" label="upload" onChange={this.fileInput} />
         <button class="button" onClick={this.addSelect}>Select</button>
         <button class="button" onClick={this.addCombine}>Combine</button>
         <button class="button" onClick={this.addGroupBy}>GroupBy</button>
-
+        <button class="button" onClick={this.run}>Run</button>
+</div>
         <SRD.DiagramWidget diagramEngine={engine} />
       </div>
     );

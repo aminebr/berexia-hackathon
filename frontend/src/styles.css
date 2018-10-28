@@ -34,3 +34,16 @@
   cursor: pointer;
   border-radius: 12px;
 }
+
+#betbet4 {
+  display: inline-flex;
+}
+
+#betbet5 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.betbet5 {
+  margin-right: 10px
+}

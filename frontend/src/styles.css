@@ -1,0 +1,36 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.srd-diagram {
+  background-color: black;
+  height: 100vh;
+}
+#betbet {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+#betbet1 {
+  margin-bottom: 100px;
+}
+
+#betbet2 {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+#betbet3 {
+  margin-bottom: 100px;
+}
+.button {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: auto;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}

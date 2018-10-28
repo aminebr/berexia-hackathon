@@ -1,0 +1,45 @@
+GET        /                       controllers.HomeController.index
+
+# Spark call test
+
+
+#xlsx
+GET        /xlsx/:path            controllers.HomeController.xlsx_Impl(path : String )
+#xlsx
+GET        /xlsx                  controllers.HomeController.xlsx_test
+
+
+
+#csv
+GET        /csv/:path            controllers.HomeController.csv_impl(path : String )
+#csv to test
+GET        /csv                 controllers.HomeController.csv_test
+
+
+#select
+GET        /select/:req             controllers.HomeController.select_impl(req : String )
+#select to test
+GET        /select                  controllers.HomeController.select_test
+
+GET        /graph                   controllers.HomeController.graphtest
+
+#select to test
+GET        /combine/:filename1/:filename2         controllers.HomeController.combine(filename1 : String , filename2 : String)
+
+
+
+
+
+
+GET        /test                   controllers.HomeController.test
+GET        /testA                  controllers.HomeController.testAsync
+
+
+
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file        controllers.Assets.at(path="/public", file)
+

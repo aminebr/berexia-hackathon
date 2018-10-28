@@ -18,8 +18,8 @@ Used technologies:
 - Spark
 - Scala
 
-![screenshot]](./img.png)
+![screenshot](./img.png)
 
-![screenshot]](./img2.png)
+![screenshot](./img2.png)
 
-![screenshot]](./im3.png)
+![screenshot](./im3.png)

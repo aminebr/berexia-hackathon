@@ -19,5 +19,7 @@ Used technologies:
 - Scala
 
 ![screenshot]](./img.png)
+
 ![screenshot]](./img2.png)
+
 ![screenshot]](./im3.png)
